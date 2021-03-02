@@ -4,10 +4,11 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-const config: webpack.Configuration = {
+module.exports = {
   mode: 'production',
-  entry: './src/index.tsx',
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[contenthash].js',
@@ -58,6 +59,11 @@ const config: webpack.Configuration = {
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/assets', to: "./assets" },
+      ],
+    }),
   ],
 };
 

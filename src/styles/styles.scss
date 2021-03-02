@@ -1,0 +1,34 @@
+@mixin navItem {
+    font-size: 3.5rem;
+    line-height: 1.5;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+        color: saddlebrown;
+    }
+}
+
+@import 'fonts.css';
+@import '../components/Game/Game.style.scss';
+@import '../components/Header/Header.style.scss';
+@import '../components/Field/Field.style.scss';
+@import '../components/Footer/Footer.style.scss';
+@import '../components/Menu/Menu.style.scss';
+
+
+
+* {
+    font-size: 10px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}

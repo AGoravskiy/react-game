@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.scss'
-
-const App = () => (
-  <h1>
-    React-game! {' '}
-    {new Date().toLocaleDateString()}
-  </h1>
-);
+import './styles/styles.scss'
+import Game from './components/Game/Game';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Game />
   </React.StrictMode>,
   document.getElementById('root')
 );

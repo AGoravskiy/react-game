@@ -2,14 +2,15 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import ESLintPlugin from "eslint-webpack-plugin";
+import ESLintPlugin from 'eslint-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-const config: webpack.Configuration = {
+module.exports = {
     mode: 'development',
     output: {
         publicPath: '/',
     },
-    entry: './src/index.tsx',
+    entry: './src/index.jsx',
     module: {
         rules: [
           {
@@ -54,6 +55,11 @@ const config: webpack.Configuration = {
         }),
         new ESLintPlugin({
             extensions: ["js", "jsx", "ts", "tsx"],
+        }),
+        new CopyWebpackPlugin({
+          patterns: [
+            { from: './src/assets', to: "./assets" },
+          ],
         }),
     ],
         devtool: "inline-source-map",

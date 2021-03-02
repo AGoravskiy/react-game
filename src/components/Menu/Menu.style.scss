@@ -1,0 +1,26 @@
+.nav {
+    position: absolute;
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    z-index: 30;
+    background: rgba($color: linen, $alpha: 0.9);
+    transition: 0.5s ease-in;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__massage {
+        display: none;
+        color: rgb(9, 204, 32);
+        padding-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+    &__list {
+        padding: 0;
+        list-style-type: none;
+
+        &__item h2 {
+            @include navItem();
+        }
+    }
+}
