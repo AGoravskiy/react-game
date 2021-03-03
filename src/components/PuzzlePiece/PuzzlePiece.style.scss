@@ -1,0 +1,21 @@
+.field__puzzlePiece {
+    border: 1px solid olive;
+    border-radius: 1rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    transition: 0.5s;
+    user-select: none;
+    background: palegreen;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(9, 204, 32);
+    }
+}
+
+[data-empty="true"] {
+    display: none;
+}
